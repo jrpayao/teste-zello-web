@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Teste Zelo - Aplicativo</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+      <ion-col align="center"></ion-col>
+      <ion-col align="center">Nome</ion-col>
+      <ion-col align="center">Bundle ID</ion-col>
+    </ion-row>
+    <ion-row *ngFor="let app of apps">
+      <ion-col>
+        <ion-button color="danger" (click)="delete(app.id)">
+          <ion-icon name="trash"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col align="center">{{app.name}}</ion-col>
+      <ion-col align="center">{{app.bundleId}}</ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="dark" (click)="showAdd()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { HomePage } from './home.page';
+import { ModalVinculoAplicativoComponent } from './modal-vinculo-aplicativo.component';
 
-describe('HomePage', () => {
-  let component: HomePage;
-  let fixture: ComponentFixture<HomePage>;
+describe('ModalVinculoAplicativoComponent', () => {
+  let component: ModalVinculoAplicativoComponent;
+  let fixture: ComponentFixture<ModalVinculoAplicativoComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ HomePage ],
+      declarations: [ ModalVinculoAplicativoComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(HomePage);
+    fixture = TestBed.createComponent(ModalVinculoAplicativoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

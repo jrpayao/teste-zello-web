@@ -1,0 +1,19 @@
+<p>
+  <ion-list>
+    <ion-list-header>
+      <ion-label>
+        Atribuir Aplicativo
+      </ion-label>
+    </ion-list-header>
+
+    <ion-item>
+      <ion-select multiple="true" [value]="[aplicativos]" [(ngModel)]="appSelect">
+        <ion-select-option *ngFor="let app of aplicativos" value={{app.id}}>{{app.name}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-button (click)="salvar()" color="dark">Salvar</ion-button>
+    <ion-button (click)="closeModal()" color="danger">Fechar</ion-button>
+  </ion-list>
+</p>
+

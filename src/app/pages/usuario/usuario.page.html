@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Teste Zelo - Manter Usuário</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+      <ion-col align="center">NOME</ion-col>
+      <ion-col align="center">PERFIL</ion-col>
+      <ion-col align="center">Aplicativos</ion-col>
+      <ion-col align="center">Ações</ion-col>
+    </ion-row>
+
+    <ion-row *ngFor="let user of users">
+
+      <ion-col align="center">{{user.name}}</ion-col>
+
+      <ion-col align="center">
+        <ion-row>
+          <ion-list>
+            <ion-item-group>
+              <ion-item> {{user.perfil?.name}}</ion-item>
+            </ion-item-group>
+          </ion-list>
+        </ion-row>
+      </ion-col>
+
+      <ion-col align="center">
+        <ion-row *ngFor="let ap of user.aplicativos">
+          <ion-list *ngFor="let app of ap.aplicativo_pessoa">
+            <ion-item-group>
+              <ion-item> Nome: {{app.name}}</ion-item>
+              <ion-item>Bundle: {{app.bundleId}}</ion-item>
+            </ion-item-group>
+          </ion-list>
+        </ion-row>
+      </ion-col>
+      <ion-col align="center">
+        <ion-nav></ion-nav>
+        <ion-button color="dark" (click)="alterar(user.id)">
+          <ion-icon name="create"></ion-icon>
+        </ion-button>
+        <ion-button color="danger" (click)="delete(user.id)">
+          <ion-icon name="trash"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="showAdd()" color="secundary">
+      <ion-icon name="person-add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
